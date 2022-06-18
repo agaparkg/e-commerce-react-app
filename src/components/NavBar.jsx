@@ -1,3 +1,5 @@
+import logBlack from '../images/logo-black.png';
+
 function NavBar() {
   return (
     <nav class='navbar page'>
@@ -29,7 +31,7 @@ function NavBar() {
           </ul>
         </div>
         {/* logo */}
-        <img src='./images/logo-black.svg' class='nav-logo' alt='logo' />
+        <img src={logBlack} class='nav-logo' alt='logo' />
         {/* cart icon */}
         <div class='toggle-container'>
           <button class='toggle-cart'>
