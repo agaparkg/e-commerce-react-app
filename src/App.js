@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Cart from './components/Cart';
+import Hero from './components/Hero';
+import Loading from './components/Loading';
+import NavBar from './components/NavBar';
+import Products from './components/Products';
+import SideBar from './components/SideBar';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      {/* page loading */}
+      <Loading isLoading={isLoading} />
+
+      {/* navbar */}
+      <NavBar />
+
+      {/* hero */}
+      <Hero />
+
+      {/* sidebar */}
+      <SideBar />
+
+      {/* cart */}
+      <Cart />
+
+      {/* products */}
+      <Products />
     </div>
   );
 }
