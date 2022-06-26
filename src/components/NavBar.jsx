@@ -1,17 +1,18 @@
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
+import { displayCart } from '../features/products/productsSlice';
 import logoBlack from '../images/logo-black.png';
 import logoWhite from '../images/logo-white.png';
 import Cart from './Cart';
 
 function NavBar() {
-  const [showCart, setShowCart] = useState(false);
+  const dispatch = useDispatch();
   let location = useLocation();
   const route = location.pathname === '/' ? 'home' : 'products';
   const navClass = route === 'home' ? 'navbar' : 'navbar page';
 
   const toggleCart = () => {
-    setShowCart(!showCart);
+    dispatch(displayCart());
   };
 
   return (
@@ -54,7 +55,7 @@ function NavBar() {
           <span className='cart-item-count'>1</span>
         </div>
         {/* cart */}
-        <Cart showCart={showCart} toggleCart={toggleCart} />
+        <Cart />
       </div>
     </nav>
   );

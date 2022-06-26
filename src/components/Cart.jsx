@@ -1,5 +1,15 @@
-function Cart({ showCart, toggleCart }) {
+import { useDispatch, useSelector } from 'react-redux';
+import { displayCart } from '../features/products/productsSlice';
+
+function Cart() {
+  const dispatch = useDispatch();
+  const showCart = useSelector((store) => store.productsState.showCart);
   const showClass = showCart ? 'cart-overlay show' : 'cart-overlay';
+
+  const toggleCart = () => {
+    dispatch(displayCart());
+  };
+
   return (
     <div className={showClass}>
       <aside className='cart'>

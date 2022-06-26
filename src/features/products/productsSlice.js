@@ -3,7 +3,7 @@ import { products } from './products-data.js';
 
 const initialState = {
   products,
-  filteredProducts: [],
+  showCart: false,
 };
 
 export const productsSlice = createSlice({
@@ -11,16 +11,12 @@ export const productsSlice = createSlice({
   initialState,
   reducers: {
     sendId: (state, action) => {},
-    filterProducts: (state, action) => {
-      state.filteredProducts = state.products.filter(
-        (p) => p.fields.price < action.payload.price
-      );
+    displayCart: (state) => {
+      state.showCart = !state.showCart;
     },
   },
 });
 
-export const selectAllProducts = (state) => state.productsState.products;
-
-export const { sendId, filterProducts } = productsSlice.actions;
+export const { sendId, displayCart } = productsSlice.actions;
 
 export default productsSlice.reducer;
