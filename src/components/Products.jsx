@@ -11,17 +11,14 @@ function Products() {
   const products = useSelector((store) => store.productsState.products);
 
   const filteredProducts = products.filter((p) => {
-    console.log((p.fields.price / 100).toFixed(2));
     return (p.fields.price / 100).toFixed(2) < Number(priceInputVal);
   });
 
   const handlePriceChange = (e) => {
     const value = e.target.value;
-    console.log(value, typeof value);
     setPriceInputVal(+value);
   };
 
-  console.log(filteredProducts);
   return (
     <>
       <PageHero path={location.pathname} />

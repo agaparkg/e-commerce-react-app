@@ -10,9 +10,7 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    sendId: (state, action) => {
-      console.log('action', action.payload);
-    },
+    sendId: (state, action) => {},
     filterProducts: (state, action) => {
       state.filteredProducts = state.products.filter(
         (p) => p.fields.price < action.payload.price
