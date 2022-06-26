@@ -1,35 +1,44 @@
+import { useLocation } from 'react-router-dom';
+
 function Products() {
+  let location = useLocation();
+  console.log('products', location);
   return (
-    <section class='products'>
+    <section className='products'>
       {/* filters */}
-      <div class='filters'>
-        <div class='filters-container'>
+      <div className='filters'>
+        <div className='filters-container'>
           {/* search */}
-          <form class='input-form'>
-            <input type='text' class='search-input' placeholder='search...' />
+          <form className='input-form'>
+            <input
+              type='text'
+              className='search-input'
+              placeholder='search...'
+            />
           </form>
           {/* categories */}
           <h4>Company</h4>
-          <article class='companies'>
-            <button class='company-btn'>all</button>
-            <button class='company-btn'>ikea</button>
+          <article className='companies'>
+            <button className='company-btn'>all</button>
+            <button className='company-btn'>ikea</button>
           </article>
           {/* price */}
           <h4>Price</h4>
-          <form class='price-form'>
+          <form className='price-form'>
             <input
               type='range'
-              class='price-filter'
+              className='price-filter'
               min='0'
               value='50'
               max='100'
+              onChange={() => {}}
             />
           </form>
-          <p class='price-value'></p>
+          <p className='price-value'></p>
         </div>
       </div>
       {/* products */}
-      <div class='products-container'></div>
+      <div className='products-container'></div>
     </section>
   );
 }

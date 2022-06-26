@@ -1,19 +1,19 @@
 function Cart() {
   return (
-    <div class='cart-overlay'>
-      <aside class='cart'>
-        <button class='cart-close'>
-          <i class='fas fa-times'></i>
+    <div className='cart-overlay'>
+      <aside className='cart'>
+        <button className='cart-close'>
+          <i className='fa fa-times'></i>
         </button>
         <header>
-          <h3 class='text-slanted'>your bag</h3>
+          <h3 className='text-slanted'>your bag</h3>
         </header>
         {/* cart items */}
-        <div class='cart-items'></div>
+        <div className='cart-items'></div>
         {/* footer */}
         <footer>
-          <h3 class='cart-total text-slanted'>total : $12.99</h3>
-          <button class='cart-checkout btn'>checkout</button>
+          <h3 className='cart-total text-slanted'>total : $12.99</h3>
+          <button className='cart-checkout btn'>checkout</button>
         </footer>
       </aside>
     </div>

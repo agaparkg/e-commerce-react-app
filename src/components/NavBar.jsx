@@ -1,44 +1,60 @@
-import logBlack from '../images/logo-black.png';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import logoBlack from '../images/logo-black.png';
+import logoWhite from '../images/logo-white.png';
+import Cart from './Cart';
 
 function NavBar() {
+  const [showCart, setShowCart] = useState(true);
+  let location = useLocation();
+  const route = location.pathname === '/' ? 'home' : 'products';
+  const navClass = route === 'home' ? 'navbar' : 'navbar page';
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
+  };
+
   return (
-    <nav class='navbar page'>
-      <div class='nav-center'>
+    <nav className={navClass}>
+      <div className='nav-center'>
         {/* links */}
         <div>
-          <button class='toggle-nav'>
-            <i class='fas fa-bars'></i>
+          <button className='toggle-nav'>
+            <i className='fa fa-bars'></i>
           </button>
-          <ul class='nav-links'>
+          <ul className='nav-links'>
             <li>
-              <a href='index.html' class='nav-link'>
-                {' '}
-                home{' '}
-              </a>
+              <Link to='/' className='nav-link'>
+                home
+              </Link>
             </li>
             <li>
-              <a href='products.html' class='nav-link'>
-                {' '}
-                products{' '}
-              </a>
+              <Link to='/products' className='nav-link'>
+                products
+              </Link>
             </li>
             <li>
-              <a href='about.html' class='nav-link'>
-                {' '}
-                about{' '}
-              </a>
+              <Link to='/about' className='nav-link'>
+                about
+              </Link>
             </li>
           </ul>
         </div>
         {/* logo */}
-        <img src={logBlack} class='nav-logo' alt='logo' />
+        <img
+          src={route === 'home' ? logoWhite : logoBlack}
+          className='nav-logo'
+          alt='logo'
+        />
         {/* cart icon */}
-        <div class='toggle-container'>
-          <button class='toggle-cart'>
-            <i class='fas fa-shopping-cart'></i>
+        <div className='toggle-container'>
+          <button onClick={toggleCart} className='toggle-cart'>
+            <i className='fa fa-shopping-cart'></i>
           </button>
-          <span class='cart-item-count'>1</span>
+          <span className='cart-item-count'>1</span>
         </div>
+        {/* cart */}
+        {showCart ? <Cart /> : null}
       </div>
     </nav>
   );
