@@ -5,7 +5,7 @@ import logoWhite from '../images/logo-white.png';
 import Cart from './Cart';
 
 function NavBar() {
-  const [showCart, setShowCart] = useState(true);
+  const [showCart, setShowCart] = useState(false);
   let location = useLocation();
   const route = location.pathname === '/' ? 'home' : 'products';
   const navClass = route === 'home' ? 'navbar' : 'navbar page';
@@ -54,7 +54,7 @@ function NavBar() {
           <span className='cart-item-count'>1</span>
         </div>
         {/* cart */}
-        {showCart ? <Cart /> : null}
+        <Cart showCart={showCart} toggleCart={toggleCart} />
       </div>
     </nav>
   );

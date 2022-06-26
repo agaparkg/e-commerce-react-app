@@ -1,8 +1,9 @@
-function Cart() {
+function Cart({ showCart, toggleCart }) {
+  const showClass = showCart ? 'cart-overlay show' : 'cart-overlay';
   return (
-    <div className='cart-overlay'>
+    <div className={showClass}>
       <aside className='cart'>
-        <button className='cart-close'>
+        <button onClick={toggleCart} className='cart-close'>
           <i className='fa fa-times'></i>
         </button>
         <header>
