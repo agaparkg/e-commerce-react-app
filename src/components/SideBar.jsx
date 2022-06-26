@@ -1,28 +1,28 @@
 function SideBar() {
   return (
-    <div class='sidebar-overlay'>
-      <aside class='sidebar'>
+    <div className='sidebar-overlay'>
+      <aside className='sidebar'>
         {/* close */}
-        <button class='sidebar-close'>
-          <i class='fas fa-times'></i>
+        <button className='sidebar-close'>
+          <i className='fa fa-times'></i>
         </button>
         {/* links */}
-        <ul class='sidebar-links'>
+        <ul className='sidebar-links'>
           <li>
-            <a href='index.html' class='sidebar-link'>
-              <i class='fa fa-home fa-fw'></i>
+            <a href='index.html' className='sidebar-link'>
+              <i className='fa fa-home fa-fw'></i>
               home
             </a>
           </li>
           <li>
-            <a href='products.html' class='sidebar-link'>
-              <i class='fa fa-couch fa-fw'></i>
+            <a href='products.html' className='sidebar-link'>
+              <i className='fa fa-couch fa-fw'></i>
               products
             </a>
           </li>
           <li>
-            <a href='about.html' class='sidebar-link'>
-              <i class='fa fa-book fa-fw'></i>
+            <a href='about.html' className='sidebar-link'>
+              <i className='fa fa-book fa-fw'></i>
               about
             </a>
           </li>

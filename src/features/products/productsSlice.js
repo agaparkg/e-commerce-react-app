@@ -10,13 +10,12 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    sendId: (state, action) => {},
     displayCart: (state) => {
       state.showCart = !state.showCart;
     },
   },
 });
 
-export const { sendId, displayCart } = productsSlice.actions;
+export const { displayCart } = productsSlice.actions;
 
 export default productsSlice.reducer;

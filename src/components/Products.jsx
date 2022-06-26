@@ -5,7 +5,7 @@ import PageHero from './PageHero';
 import SingleProduct from './SingleProduct';
 
 function Products() {
-  const [priceInputVal, setPriceInputVal] = useState('');
+  const [priceInputVal, setPriceInputVal] = useState(50);
   let location = useLocation();
 
   const products = useSelector((store) => store.productsState.products);
