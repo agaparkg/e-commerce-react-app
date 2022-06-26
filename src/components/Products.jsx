@@ -1,15 +1,12 @@
 import { useLocation } from 'react-router-dom';
+import PageHero from './PageHero';
 
 function Products() {
   let location = useLocation();
   console.log('products', location);
   return (
     <>
-      <section class='page-hero'>
-        <div class='section-center'>
-          <h3 class='page-hero-title'>Home / Products</h3>
-        </div>
-      </section>
+      <PageHero path={location.pathname} />
       <section className='products'>
         {/* filters */}
         <div className='filters'>

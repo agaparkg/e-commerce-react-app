@@ -5,7 +5,7 @@ import SingleProduct from './SingleProduct';
 
 function FeaturedProducts() {
   const [isLoading, setIsLoading] = useState(false);
-  const [featuredProducts, setFeaturedProducts] = useState(
+  const [featuredProducts] = useState(
     products.filter((p) => p.fields.featured)
   );
 
