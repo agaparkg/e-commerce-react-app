@@ -1,9 +1,27 @@
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import PageHero from './PageHero';
+import SingleProduct from './SingleProduct';
 
 function Products() {
+  const [priceInputVal, setPriceInputVal] = useState('');
   let location = useLocation();
-  console.log('products', location);
+
+  const products = useSelector((store) => store.productsState.products);
+
+  const filteredProducts = products.filter((p) => {
+    console.log((p.fields.price / 100).toFixed(2));
+    return (p.fields.price / 100).toFixed(2) < Number(priceInputVal);
+  });
+
+  const handlePriceChange = (e) => {
+    const value = e.target.value;
+    console.log(value, typeof value);
+    setPriceInputVal(+value);
+  };
+
+  console.log(filteredProducts);
   return (
     <>
       <PageHero path={location.pathname} />
@@ -17,6 +35,7 @@ function Products() {
                 type='text'
                 className='search-input'
                 placeholder='search...'
+                onChange={() => {}}
               />
             </form>
             {/* categories */}
@@ -26,22 +45,28 @@ function Products() {
               <button className='company-btn'>ikea</button>
             </article>
             {/* price */}
-            <h4>Price</h4>
+            <h4>
+              Price <span>${priceInputVal}</span>
+            </h4>
             <form className='price-form'>
               <input
                 type='range'
                 className='price-filter'
                 min='0'
-                value='50'
+                value={priceInputVal}
                 max='100'
-                onChange={() => {}}
+                onChange={handlePriceChange}
               />
             </form>
             <p className='price-value'></p>
           </div>
         </div>
         {/* products */}
-        <div className='products-container'></div>
+        <div className='products-container'>
+          {filteredProducts.map((fp) => {
+            return <SingleProduct fp={fp} />;
+          })}
+        </div>
       </section>
     </>
   );

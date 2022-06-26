@@ -8,13 +8,13 @@ const About = () => {
     <>
       <PageHero path={location.pathname} />
 
-      <section class='section section-center about-page'>
-        <div class='title'>
+      <section className='section section-center about-page'>
+        <div className='title'>
           <h2>
             <span>/</span> our history
           </h2>
         </div>
-        <p class='about-text'>
+        <p className='about-text'>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
           accusantium sapiente tempora sed dolore esse deserunt eaque excepturi,
           delectus error accusamus vel eligendi, omnis beatae. Quisquam, dicta.

@@ -1,12 +1,6 @@
-const SingleProduct = ({ fp }) => {
-  const formatPrice = (price) => {
-    let formattedPrice = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    }).format((price / 100).toFixed(2));
-    return formattedPrice;
-  };
+import { formatPrice } from '../utils/utils';
 
+const SingleProduct = ({ fp }) => {
   return (
     <article className='product'>
       <div className='product-container'>

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { products } from '../products';
 import SingleProduct from './SingleProduct';
 
 function FeaturedProducts() {
   const [isLoading, setIsLoading] = useState(false);
+  const products = useSelector((store) => store.productsState.products);
   const [featuredProducts] = useState(
     products.filter((p) => p.fields.featured)
   );
