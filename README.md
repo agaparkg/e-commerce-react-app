@@ -17,4 +17,4 @@ You may also see any lint errors in the console.
 
 ### Deployment
 
-This app has been deployed to Surge: [e-commerce](https://disgusting-locket.surge.sh/)
+This app has been deployed to Surge: [e-commerce](https://impossible-grandfather.surge.sh/)
