@@ -22,19 +22,31 @@ function SideBar() {
         {/* links */}
         <ul className='sidebar-links'>
           <li>
-            <Link to='/' className='sidebar-link'>
+            <Link
+              onClick={() => dispatch(displayNavBar())}
+              to='/'
+              className='sidebar-link'
+            >
               <i className='fa fa-home fa-fw'></i>
               home
             </Link>
           </li>
           <li>
-            <Link to='/products' className='sidebar-link'>
+            <Link
+              onClick={() => dispatch(displayNavBar())}
+              to='/products'
+              className='sidebar-link'
+            >
               <i className='fa fa-couch fa-fw'></i>
               products
             </Link>
           </li>
           <li>
-            <Link to='/about' className='sidebar-link'>
+            <Link
+              onClick={() => dispatch(displayNavBar())}
+              to='/about'
+              className='sidebar-link'
+            >
               <i className='fa fa-book fa-fw'></i>
               about
             </Link>
