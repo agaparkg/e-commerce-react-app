@@ -494,7 +494,8 @@ Cart
 .cart-item-remove-btn {
   background: transparent;
   border-color: transparent;
-  color: var(--clr-grey-5);
+  color: var(--clr-red-dark);
+  /* color: var(--clr-grey-5); */
   letter-spacing: var(--spacing);
   cursor: pointer;
 }
