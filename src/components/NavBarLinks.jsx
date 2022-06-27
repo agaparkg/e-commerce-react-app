@@ -1,9 +1,12 @@
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { displayNavBar } from '../features/products/productsSlice';
 
 function NavBarLinks() {
+  const dispatch = useDispatch();
   return (
     <div>
-      <button className='toggle-nav'>
+      <button onClick={() => dispatch(displayNavBar())} className='toggle-nav'>
         <i className='fa fa-bars'></i>
       </button>
       <ul className='nav-links'>

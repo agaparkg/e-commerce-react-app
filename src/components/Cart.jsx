@@ -6,17 +6,13 @@ import SingleCartProduct from './SingleCartProduct';
 function Cart() {
   const dispatch = useDispatch();
   const showCart = useSelector((store) => store.productsState.showCart);
-  const showclassName = showCart ? 'cart-overlay show' : 'cart-overlay';
+  const showCartClassName = showCart ? 'cart-overlay show' : 'cart-overlay';
   const cartProducts = useSelector((store) => store.productsState.cartProducts);
 
-  const toggleCart = () => {
-    dispatch(displayCart());
-  };
-
   return (
-    <div className={showclassName}>
+    <div className={showCartClassName}>
       <aside className='cart'>
-        <button onClick={toggleCart} className='cart-close'>
+        <button onClick={() => dispatch(displayCart())} className='cart-close'>
           <i className='fa fa-times'></i>
         </button>
         <header>

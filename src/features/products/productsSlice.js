@@ -4,6 +4,7 @@ import { products } from './products-data.js';
 const initialState = {
   products,
   showCart: false,
+  showNavBar: false,
   cartProducts: [],
 };
 
@@ -13,6 +14,9 @@ export const productsSlice = createSlice({
   reducers: {
     displayCart: (state) => {
       state.showCart = !state.showCart;
+    },
+    displayNavBar: (state) => {
+      state.showNavBar = !state.showNavBar;
     },
     addProductToCart: (state, action) => {
       const product = state.products.find((p) => p.id === action.payload);
@@ -55,6 +59,7 @@ export const {
   removeProductFromCart,
   increaseCartProductCount,
   decreaseCartProductCount,
+  displayNavBar,
 } = productsSlice.actions;
 
 export default productsSlice.reducer;

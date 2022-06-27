@@ -1,30 +1,43 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { displayNavBar } from '../features/products/productsSlice';
+
 function SideBar() {
+  const showNavBar = useSelector((store) => store.productsState.showNavBar);
+  const dispatch = useDispatch();
+  const showNavBarClassName = showNavBar
+    ? 'sidebar-overlay show'
+    : 'sidebar-overlay';
+
   return (
-    <div className='sidebar-overlay'>
+    <div className={showNavBarClassName}>
       <aside className='sidebar'>
         {/* close */}
-        <button className='sidebar-close'>
+        <button
+          onClick={() => dispatch(displayNavBar())}
+          className='sidebar-close'
+        >
           <i className='fa fa-times'></i>
         </button>
         {/* links */}
         <ul className='sidebar-links'>
           <li>
-            <a href='index.html' className='sidebar-link'>
+            <Link to='/' className='sidebar-link'>
               <i className='fa fa-home fa-fw'></i>
               home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href='products.html' className='sidebar-link'>
+            <Link to='/products' className='sidebar-link'>
               <i className='fa fa-couch fa-fw'></i>
               products
-            </a>
+            </Link>
           </li>
           <li>
-            <a href='about.html' className='sidebar-link'>
+            <Link to='/about' className='sidebar-link'>
               <i className='fa fa-book fa-fw'></i>
               about
-            </a>
+            </Link>
           </li>
         </ul>
       </aside>

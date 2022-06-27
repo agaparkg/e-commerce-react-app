@@ -4,6 +4,7 @@ import logoWhite from '../images/logo-white.png';
 import Cart from './Cart';
 import CartIcon from './CartIcon';
 import NavBarLinks from './NavBarLinks';
+import SideBar from './SideBar';
 
 function NavBar() {
   let location = useLocation();
@@ -13,6 +14,8 @@ function NavBar() {
   return (
     <nav className={navClass}>
       <div className='nav-center'>
+        {/* side-bar */}
+        <SideBar />
         {/* links */}
         <NavBarLinks />
         {/* logo */}
