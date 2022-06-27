@@ -1,7 +1,10 @@
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addProductToCart } from '../features/products/productsSlice';
 import { formatPrice } from '../utils/utils';
 
 const SingleProduct = ({ fp }) => {
+  let dispatch = useDispatch();
   return (
     <article className='product'>
       <div className='product-container'>
@@ -11,7 +14,11 @@ const SingleProduct = ({ fp }) => {
           <Link to={`/products/${fp.id}`} className='product-icon'>
             <i className='fa fa-search'></i>
           </Link>
-          <button className='product-cart-btn product-icon' data-id='1'>
+          <button
+            onClick={() => dispatch(addProductToCart(fp.id))}
+            className='product-cart-btn product-icon'
+            data-id={fp.id}
+          >
             <i className='fa fa-shopping-cart'></i>
           </button>
         </div>

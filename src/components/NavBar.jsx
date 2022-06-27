@@ -1,19 +1,13 @@
-import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-import { displayCart } from '../features/products/productsSlice';
 import logoBlack from '../images/logo-black.png';
 import logoWhite from '../images/logo-white.png';
 import Cart from './Cart';
+import CartIcon from './CartIcon';
 
 function NavBar() {
-  const dispatch = useDispatch();
   let location = useLocation();
   const route = location.pathname === '/' ? 'home' : 'products';
   const navClass = route === 'home' ? 'navbar' : 'navbar page';
-
-  const toggleCart = () => {
-    dispatch(displayCart());
-  };
 
   return (
     <nav className={navClass}>
@@ -48,12 +42,7 @@ function NavBar() {
           alt='logo'
         />
         {/* cart icon */}
-        <div className='toggle-container'>
-          <button onClick={toggleCart} className='toggle-cart'>
-            <i className='fa fa-shopping-cart'></i>
-          </button>
-          <span className='cart-item-count'>1</span>
-        </div>
+        <CartIcon />
         {/* cart */}
         <Cart />
       </div>

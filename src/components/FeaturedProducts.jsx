@@ -19,6 +19,7 @@ function FeaturedProducts() {
   const renderFeaturedProducts = featuredProducts.map((fp) => {
     return <SingleProduct fp={fp} key={fp.id} />;
   });
+
   return (
     <section className='section featured'>
       <div className='title'>
