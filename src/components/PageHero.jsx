@@ -9,6 +9,7 @@ function PageHero({ path }) {
       pathName = 'About';
       break;
     default:
+      pathName = path;
       break;
   }
   return (

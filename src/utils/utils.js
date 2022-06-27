@@ -25,6 +25,11 @@ const formatPrice = (price) => {
   return formattedPrice;
 };
 
+const formatCompany = (company) => {
+  let capCompanyName = company[0].toUpperCase() + company.slice(1);
+  return capCompanyName;
+};
+
 const getStorageItem = (item) => {
   let storageItem = localStorage.getItem(item);
   if (storageItem) {
@@ -46,4 +51,5 @@ export {
   formatPrice,
   getStorageItem,
   setStorageItem,
+  formatCompany,
 };
