@@ -62,7 +62,7 @@ function Products() {
                 onChange={handleProductSearch}
               />
             </form>
-            {/* categories */}
+            {/* companies list */}
             <h4>Company</h4>
             <article className='companies'>
               {companies.map((c, ind) => {

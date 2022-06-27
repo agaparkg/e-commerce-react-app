@@ -33,7 +33,7 @@ const formatCompany = (company) => {
 const getStorageItem = (item) => {
   let storageItem = localStorage.getItem(item);
   if (storageItem) {
-    storageItem = JSON.parse(localStorage.getItem(item));
+    storageItem = JSON.parse(storageItem);
   } else {
     storageItem = [];
   }

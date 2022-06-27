@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getStorageItem, setStorageItem } from '../../utils/utils.js';
 import { products } from './products-data.js';
 
 const initialState = {
   products,
   showCart: false,
   showNavBar: false,
-  cartProducts: [],
+  cartProducts: getStorageItem('cartProducts'),
 };
 
 export const productsSlice = createSlice({
@@ -30,11 +31,13 @@ export const productsSlice = createSlice({
         cartProduct['count'] = 1;
         state.cartProducts.push(product);
       }
+      setStorageItem('cartProducts', state.cartProducts);
     },
     removeProductFromCart: (state, action) => {
       state.cartProducts = state.cartProducts.filter(
         (cp) => cp.id !== action.payload
       );
+      setStorageItem('cartProducts', state.cartProducts);
     },
     increaseCartProductCount: (state, action) => {
       state.cartProducts.forEach((cp) => {
@@ -42,6 +45,7 @@ export const productsSlice = createSlice({
           cp.count++;
         }
       });
+      setStorageItem('cartProducts', state.cartProducts);
     },
     decreaseCartProductCount: (state, action) => {
       state.cartProducts.forEach((cp) => {
@@ -49,6 +53,7 @@ export const productsSlice = createSlice({
           cp.count--;
         }
       });
+      setStorageItem('cartProducts', state.cartProducts);
     },
   },
 });
