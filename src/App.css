@@ -435,7 +435,7 @@ Checkout Modal
   border-radius: var(--radius);
   box-shadow: var(--dark-shadow);
   position: relative;
-  padding: 4rem;
+  padding: 1rem;
   transform: scale(0);
 }
 .show .checkout {
@@ -452,11 +452,14 @@ Checkout Modal
   cursor: pointer;
 }
 .checkout-error {
-  position: absolute;
-  top: 5rem;
-  left: 0;
   width: 100%;
   text-align: center;
+  margin-top: 3rem;
+}
+@media screen and (max-width: 992px) {
+  .checkout-error {
+    font-size: 1rem;
+  }
 }
 /*
 =============== 
