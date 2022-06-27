@@ -1,7 +1,7 @@
 # E-commerce React App (Comfy)
 
-![Home page screen view]('./images/home.png')
-![Products page screen view]('./images/products.png')
+![Home page screen view]('./src/images/home.png')
+![Products page screen view]('./src/images/products.png')
 
 ## Available Scripts
 
