@@ -53,7 +53,6 @@ const ProductDetails = () => {
               <button
                 onClick={() => dispatch(addProductToCart(id))}
                 className='addToCartBtn btn'
-                data-id='id'
               >
                 add to cart
               </button>

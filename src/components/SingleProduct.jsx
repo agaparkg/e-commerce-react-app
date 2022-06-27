@@ -17,7 +17,6 @@ const SingleProduct = ({ fp }) => {
           <button
             onClick={() => dispatch(addProductToCart(fp.id))}
             className='product-cart-btn product-icon'
-            data-id={fp.id}
           >
             <i className='fa fa-shopping-cart'></i>
           </button>

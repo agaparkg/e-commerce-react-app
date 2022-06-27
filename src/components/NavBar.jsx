@@ -1,8 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import logoBlack from '../images/logo-black.png';
 import logoWhite from '../images/logo-white.png';
 import Cart from './Cart';
 import CartIcon from './CartIcon';
+import NavBarLinks from './NavBarLinks';
 
 function NavBar() {
   let location = useLocation();
@@ -13,28 +14,7 @@ function NavBar() {
     <nav className={navClass}>
       <div className='nav-center'>
         {/* links */}
-        <div>
-          <button className='toggle-nav'>
-            <i className='fa fa-bars'></i>
-          </button>
-          <ul className='nav-links'>
-            <li>
-              <Link to='/' className='nav-link'>
-                home
-              </Link>
-            </li>
-            <li>
-              <Link to='/products' className='nav-link'>
-                products
-              </Link>
-            </li>
-            <li>
-              <Link to='/about' className='nav-link'>
-                about
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <NavBarLinks />
         {/* logo */}
         <img
           src={route === 'home' ? logoWhite : logoBlack}
