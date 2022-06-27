@@ -1,7 +1,7 @@
 function Loading({ isLoading }) {
   return (
     isLoading && (
-      <div class='page-loading'>
+      <div className='page-loading'>
         <h2>Loading...</h2>
       </div>
     )

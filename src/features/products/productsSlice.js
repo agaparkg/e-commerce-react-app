@@ -6,6 +6,7 @@ const initialState = {
   products,
   showCart: false,
   showNavBar: false,
+  showCheckoutModal: false,
   cartProducts: getStorageItem('cartProducts'),
 };
 
@@ -18,6 +19,9 @@ export const productsSlice = createSlice({
     },
     displayNavBar: (state) => {
       state.showNavBar = !state.showNavBar;
+    },
+    displayCheckoutModal: (state) => {
+      state.showCheckoutModal = !state.showCheckoutModal;
     },
     addProductToCart: (state, action) => {
       const product = state.products.find((p) => p.id === action.payload);
@@ -64,6 +68,7 @@ export const {
   removeProductFromCart,
   increaseCartProductCount,
   decreaseCartProductCount,
+  displayCheckoutModal,
   displayNavBar,
 } = productsSlice.actions;
 

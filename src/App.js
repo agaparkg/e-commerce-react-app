@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './components/About';
 import Cart from './components/Cart';
+import CheckoutModal from './components/CheckoutModal';
 import ErrorPage from './components/ErrorPage';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
@@ -17,6 +18,8 @@ function App() {
       <SideBar />
       {/* cart */}
       <Cart />
+      {/* checkout-modal */}
+      <CheckoutModal />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='products'>
