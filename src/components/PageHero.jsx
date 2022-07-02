@@ -1,15 +1,17 @@
 function PageHero({ path }) {
   let pathName;
-
   switch (path) {
     case '/products':
       pathName = 'Products';
+      document.title = 'Products | Comfy';
       break;
     case '/about':
       pathName = 'About';
+      document.title = 'About | Comfy';
       break;
     default:
       pathName = path;
+      document.title = 'Product Info | Comfy';
       break;
   }
   return (
