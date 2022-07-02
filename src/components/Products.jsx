@@ -59,8 +59,15 @@ function Products() {
                 type='text'
                 className='search-input'
                 placeholder='search...'
+                value={searchVal}
                 onChange={handleProductSearch}
               />
+              {searchVal && (
+                <i
+                  onClick={() => setSearchVal('')}
+                  className='fa fa-times clear-search'
+                ></i>
+              )}
             </form>
             {/* companies list */}
             <h4>Company</h4>

@@ -707,10 +707,20 @@ Products Page
   font-weight: 500;
   margin: 1.5rem 0 0.5rem;
 }
-
+.input-form {
+  position: relative;
+}
+.clear-search {
+  font-size: 20px;
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  cursor: pointer;
+}
 .search-input {
   width: 100%;
   padding: 0.5rem;
+  padding-right: 1.4rem;
   background: var(--clr-grey-10);
   border-radius: var(--radius);
   border-color: transparent;
