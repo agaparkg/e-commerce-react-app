@@ -709,6 +709,7 @@ Products Page
 }
 
 .search-input {
+  width: 100%;
   padding: 0.5rem;
   background: var(--clr-grey-10);
   border-radius: var(--radius);
@@ -719,6 +720,8 @@ Products Page
   text-transform: capitalize;
 }
 .company-btn {
+  text-align: left;
+  width: 100%;
   display: block;
   margin: 0.25em 0;
   padding: 0.25rem;
@@ -732,6 +735,10 @@ Products Page
 }
 .company-btn:hover {
   color: var(--clr-grey-3);
+  background-color: var(--clr-grey-9);
+}
+.active {
+  background-color: var(--clr-grey-9);
 }
 .price-filter {
   background: var(--clr-grey-5) !important;

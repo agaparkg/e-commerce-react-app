@@ -66,11 +66,13 @@ function Products() {
             <h4>Company</h4>
             <article className='companies'>
               {companies.map((c, ind) => {
+                const btnClass =
+                  c === companyName ? 'company-btn active' : 'company-btn';
                 return (
                   <button
                     onClick={() => changeCompanyProducts(c)}
                     key={ind}
-                    className='company-btn'
+                    className={btnClass}
                   >
                     {formatCompany(c)}
                   </button>
