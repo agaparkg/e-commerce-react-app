@@ -19,3 +19,4 @@ You may also see any lint errors in the console.
 ### Deployment
 
 This app has been deployed to Surge: [e-commerce](https://impossible-grandfather.surge.sh/)
+Whenever you make changes and push them to the github, surge deployment will also start automatically. Check this link out for more info: [Deploying continuously using Git Hooks](https://surge.sh/help/deploying-continuously-using-git-hooks)
